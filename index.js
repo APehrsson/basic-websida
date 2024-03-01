@@ -12,5 +12,15 @@ const app = express();
 // to the web browser
 app.use(express.static('WWW'));
 
+// Hitta den aktiva länken baserat på sidans URL
+const currentPage = window.location.pathname;
+const navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach(link => {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('active');
+  }
+});
+
 // Start the web server
 app.listen(port, () => console.log('Running on http://localhost:' + port));
