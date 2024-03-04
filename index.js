@@ -1,5 +1,6 @@
 // Use Express - a web server module
 import express from 'express';
+import path from 'path';
 
 // The port to run the server on
 const port = 80;
@@ -10,7 +11,7 @@ const app = express();
 
 // Serve all files in the www folder
 // to the web browser
-app.use(express.static('WWW'));
+app.use(express.static(path.join(__dirname, 'www')));
 
 // Start the web server
 app.listen(port, () => console.log('Running on http://localhost:' + port));
