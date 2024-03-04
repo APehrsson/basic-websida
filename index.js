@@ -10,7 +10,7 @@ const app = express();
 
 // Serve all files in the www folder
 // to the web browser
-app.use(express.static('www'));
+app.use(express.static('WWW'));
 
 // Start the web server
 app.listen(port, () => console.log('Running on http://localhost:' + port));
